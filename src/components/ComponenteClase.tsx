@@ -1,9 +1,8 @@
-import React, { Component } from "react"
-
+import { memo } from "react";
+import React, { Component } from "react";
 class ComponenteClase extends Component {
-    render() {
-        return <h1>Este es el componente clase</h1>
-    }
+  memo(function () {
+    return <h1>Este es el componente clase</h1>;
+  })
 }
-
-export default ComponenteClase
+export default ComponenteClase;
