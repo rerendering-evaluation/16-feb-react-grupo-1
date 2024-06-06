@@ -1,4 +1,3 @@
-import { memo } from "react";
 import React, { Component } from "react";
 export default class ComponenteCicloVida extends Component<{}, {
   toggle: boolean;
@@ -9,7 +8,7 @@ export default class ComponenteCicloVida extends Component<{}, {
   UNSAFE_componentWillMount() {
     console.log("El componente se va a montar");
   }
-  memo(function () {
+  render() {
     console.log(this.state.toggle);
     return <div>
                 <button onClick={() => this.setState(state => ({
@@ -18,7 +17,7 @@ export default class ComponenteCicloVida extends Component<{}, {
                     Toggle
                 </button>
             </div>;
-  })
+  }
   componentDidMount(): void {
     console.log("El componente ha sido montado");
   }

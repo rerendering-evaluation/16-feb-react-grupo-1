@@ -1,4 +1,7 @@
-const CompHijo = ({ texto }) => {
+const CompHijo = ({
+  texto
+}) => {
+  console.log(window.globalCount++);
   //   console.log(props.texto)
   //   const { texto } = props
   //   const texto = props.texto

@@ -8,6 +8,7 @@ type TContadorProps = {
 const Contador = ({
   initialValue
 }: TContadorProps) => {
+  console.log(window.globalCount++);
   const [valor, setValor] = useState(initialValue || 0);
   const restaValor = useCallback((cant: number = 1) => {
     setValor(anteriorvalor => anteriorvalor - cant);

@@ -8,6 +8,7 @@ const BotonesContador = memo(({
   restaValor,
   sumaValor
 }: IBotonesProps) => {
+  console.log(window.globalCount++);
   return <div>
             <button onClick={() => restaValor(5)}>Menos 5</button>
             <button onClick={() => restaValor()}>Menos</button>

@@ -1,7 +1,10 @@
-import React from "react"
-
-const DisplayContador = ({ valor }: { valor: number }) => {
-    return <h3>{valor}</h3>
-}
-
-export default DisplayContador
+import React from "react";
+const DisplayContador = ({
+  valor
+}: {
+  valor: number;
+}) => {
+  console.log(window.globalCount++);
+  return <h3>{valor}</h3>;
+};
+export default DisplayContador;

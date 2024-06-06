@@ -10,6 +10,7 @@ import ContadorClase from "./components/contador/ContadorClase";
 import CompPadre from "./components/jerarquia/CompPadre";
 const miElemento = <button>Mi botón</button>;
 const App = memo(function App() {
+  console.log(window.globalCount++);
   const [show, setShow] = useState(true);
   // Hacer cálculos, llamar a apis, utilizar hooks
   return <div>

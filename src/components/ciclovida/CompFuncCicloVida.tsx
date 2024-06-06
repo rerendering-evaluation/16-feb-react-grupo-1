@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { memo } from "react";
 import React, { useState, useEffect } from "react";
 const CompFuncCicloVida = memo(() => {
+  console.log(window.globalCount++);
   const miVariable = useRef<boolean | undefined>();
   // 1 - Componente se monta
   // 2 - Componente se actualiza
@@ -13,14 +14,14 @@ const CompFuncCicloVida = memo(() => {
     };
   }, []);
   useEffect(() => {
-    if (typeof miVariable.value === "undefined") return;
+    if (typeof miVariable.current === "undefined") return;
     console.log("miVariable ha cambiado");
-  }, [miVariable.value]);
+  }, [miVariable.current]);
   const updateVar = () => {
-    miVariable.current = (() => {
+    miVariable.current = (val => {
       if (typeof val === "undefined") return true;
       return !val;
-    })();
+    })(miVariable.current);
   };
   return <div>
             <button onClick={updateVar}>Actualiza</button>

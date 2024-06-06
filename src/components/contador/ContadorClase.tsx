@@ -1,4 +1,3 @@
-import { memo } from "react";
 import React, { Component } from "react";
 interface IContadorProps {
   initialValue?: number;
@@ -38,7 +37,7 @@ export default class ContadorClase extends Component<IContadorProps, IContadorSt
       valor: 0
     });
   }
-  memo(function () {
+  render() {
     const valor = this.state.valor;
     return <>
                 <h3>{valor}</h3>
@@ -51,5 +50,5 @@ export default class ContadorClase extends Component<IContadorProps, IContadorSt
                     <button onClick={this.reset}>Reset</button>
                 </div>
             </>;
-  })
+  }
 }
